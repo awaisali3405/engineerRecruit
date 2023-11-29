@@ -11,8 +11,8 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
     public function saveImage($image)
     {
-        $filename = time() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('tenancy/assets/images'), $filename);
+        $filename = time() . "-" . $image->getClientOriginalName();
+        $image->move(public_path('/images'), $filename);
         return 'images/' . $filename;
     }
 }

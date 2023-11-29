@@ -204,6 +204,30 @@ class HomeController extends Controller
                 ->attachData($pdf1->output(), "personalDetail.pdf")
                 ->attachData($pdf2->output(), "health&Safety.pdf")
                 ->attachData($pdf3->output(), "Term&Condition.pdf");
+            if (isset($personalDetail['proof_id_img'])) {
+
+                $message->attach(asset($personalDetail['proof_id_img']));
+            }
+            if (isset($personalDetail['proof_of_address_img'])) {
+
+                $message->attach(asset($personalDetail['proof_of_address_img']));
+            }
+            if (isset($personalDetail['proof_of_public_img'])) {
+
+                $message->attach(asset($personalDetail['proof_of_public_img']));
+            }
+            if (isset($personalDetail['proof_of_dbs_img'])) {
+
+                $message->attach(asset($personalDetail['proof_of_dbs_img']));
+            }
+            if (isset($personalDetail['proof_of_gas_front_img'])) {
+
+                $message->attach(asset($personalDetail['proof_of_gas_front_img']));
+            }
+            if (isset($personalDetail['proof_of_gas_back_img'])) {
+
+                $message->attach(asset($personalDetail['proof_of_gas_back_img']));
+            }
         });
         PersonalDetail::updateOrCreate(['user_id' => auth()->user()->id], $data);
         return redirect()->route('page13');
