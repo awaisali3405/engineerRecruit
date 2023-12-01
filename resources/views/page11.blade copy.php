@@ -29,7 +29,8 @@
                                             <h6 class="fw-400 fz-14">Name</h6>
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
-                                            <input type="text" name="health_name" value="{{ old('health_name') }}"
+                                            <input type="text" name="health_name"
+                                                value="{{ old('health_name', $personalDetail->health_name) }}"
                                                 placeholder="Jhon Doe" required="required">
                                         </div>
                                     </div>
@@ -38,15 +39,16 @@
                                             <h6 class="fw-400 fz-14">Date</h6>
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
-                                            <input type="Date" name="health_date" value="{{ old('health_date') }}"
+                                            <input type="Date" name="health_date"
+                                                value="{{ old('health_date', $personalDetail->health_date) }}"
                                                 placeholder="Jhon Doe" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input type="checkbox" name="is_confirm"
-                                                {{ old('is_confirm') ? 'checked' : '' }} class="checkboxterms"
-                                                value="1"><span class="check-confirm">I herby
+                                                {{ old('is_confirm', $personalDetail->is_confirm) ? 'checked' : '' }}
+                                                class="checkboxterms" value="1"><span class="check-confirm">I herby
                                                 confirm that I have read
                                                 and understood the
                                                 above procedure and will adhere

@@ -136,22 +136,22 @@ class HomeController extends Controller
         // dd($request);
         $data = $request->except('_token');
         if (isset($data['proof_id_img'])) {
-            $data['proof_id_img'] = $this->saveImage($data['proof_id_img']);
+            $data['proof_id_img'] = $this->saveImage($data['proof_id_img'],'proof-of-id');
         }
         if (isset($data['proof_of_address_img'])) {
-            $data['proof_of_address_img'] = $this->saveImage($data['proof_of_address_img']);
+            $data['proof_of_address_img'] = $this->saveImage($data['proof_of_address_img'],'proof-of-address');
         }
         if (isset($data['proof_of_public_img'])) {
-            $data['proof_of_public_img'] = $this->saveImage($data['proof_of_public_img']);
+            $data['proof_of_public_img'] = $this->saveImage($data['proof_of_public_img'],'proof-of-public-liability');
         }
         if (isset($data['proof_of_dbs_img'])) {
-            $data['proof_of_dbs_img'] = $this->saveImage($data['proof_of_dbs_img']);
+            $data['proof_of_dbs_img'] = $this->saveImage($data['proof_of_dbs_img'],'DBS-check');
         }
         if (isset($data['proof_of_gas_front_img'])) {
-            $data['proof_of_gas_front_img'] = $this->saveImage($data['proof_of_gas_front_img']);
+            $data['proof_of_gas_front_img'] = $this->saveImage($data['proof_of_gas_front_img'],'picture-of-front-of-gas-sage-card');
         }
         if (isset($data['proof_of_gas_back_img'])) {
-            $data['proof_of_gas_back_img'] = $this->saveImage($data['proof_of_gas_back_img']);
+            $data['proof_of_gas_back_img'] = $this->saveImage($data['proof_of_gas_back_img'],'picture-of-back-of-gas-sage-card');
         }
 
 
@@ -197,42 +197,42 @@ class HomeController extends Controller
         $pdf1 = \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.page10', $personalDetail);
         $pdf2 = \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.page11', $personalDetail);
         $pdf3 = \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.page12', $personalDetail);
+        if ($personalDetail["email"]) {
+            Mail::send('emails.page10', $personalDetail, function ($message) use ($personalDetail, $pdf1, $pdf2, $pdf3) {
+                $message->to($personalDetail["email"], $personalDetail["email"])
+                    ->subject("Subject");
+                if (isset($personalDetail['proof_id_img'])) {
 
+                    $message->attach(asset($personalDetail['proof_id_img']));
+                }
+                if (isset($personalDetail['proof_of_address_img'])) {
+
+                    $message->attach(asset($personalDetail['proof_of_address_img']));
+                }
+                if (isset($personalDetail['proof_of_public_img'])) {
+
+                    $message->attach(asset($personalDetail['proof_of_public_img']));
+                }
+                if (isset($personalDetail['proof_of_dbs_img'])) {
+
+                    $message->attach(asset($personalDetail['proof_of_dbs_img']));
+                }
+                if (isset($personalDetail['proof_of_gas_front_img'])) {
+
+                    $message->attach(asset($personalDetail['proof_of_gas_front_img']));
+                }
+                if (isset($personalDetail['proof_of_gas_back_img'])) {
+
+                    $message->attach(asset($personalDetail['proof_of_gas_back_img']));
+                }
+                $message->attachData($pdf1->output(), "personalDetail.pdf")
+                    ->attachData($pdf2->output(), "health&Safety.pdf")
+                    ->attachData($pdf3->output(), "Term&Condition.pdf");
+            });
+        }
         Mail::send('emails.page10', $personalDetail, function ($message) use ($personalDetail, $pdf1, $pdf2, $pdf3) {
-            $message->to($personalDetail["email"], $personalDetail["email"])
-                ->subject("Subject")
-                ->attachData($pdf1->output(), "personalDetail.pdf")
-                ->attachData($pdf2->output(), "health&Safety.pdf")
-                ->attachData($pdf3->output(), "Term&Condition.pdf");
-            if (isset($personalDetail['proof_id_img'])) {
-
-                $message->attach(asset($personalDetail['proof_id_img']));
-            }
-            if (isset($personalDetail['proof_of_address_img'])) {
-
-                $message->attach(asset($personalDetail['proof_of_address_img']));
-            }
-            if (isset($personalDetail['proof_of_public_img'])) {
-
-                $message->attach(asset($personalDetail['proof_of_public_img']));
-            }
-            if (isset($personalDetail['proof_of_dbs_img'])) {
-
-                $message->attach(asset($personalDetail['proof_of_dbs_img']));
-            }
-            if (isset($personalDetail['proof_of_gas_front_img'])) {
-
-                $message->attach(asset($personalDetail['proof_of_gas_front_img']));
-            }
-            if (isset($personalDetail['proof_of_gas_back_img'])) {
-
-                $message->attach(asset($personalDetail['proof_of_gas_back_img']));
-            }
             $message->to("info@pm247.co.uk", $personalDetail["email"])
-                ->subject("Subject")
-                ->attachData($pdf1->output(), "personalDetail.pdf")
-                ->attachData($pdf2->output(), "health&Safety.pdf")
-                ->attachData($pdf3->output(), "Term&Condition.pdf");
+                ->subject("Subject");
             if (isset($personalDetail['proof_id_img'])) {
 
                 $message->attach(asset($personalDetail['proof_id_img']));
@@ -257,6 +257,9 @@ class HomeController extends Controller
 
                 $message->attach(asset($personalDetail['proof_of_gas_back_img']));
             }
+            $message->attachData($pdf1->output(), "personalDetail.pdf")
+                ->attachData($pdf2->output(), "health&Safety.pdf")
+                ->attachData($pdf3->output(), "Term&Condition.pdf");
         });
         PersonalDetail::updateOrCreate(['user_id' => auth()->user()->id], $data);
         return redirect()->route('page13');

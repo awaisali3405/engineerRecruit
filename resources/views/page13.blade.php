@@ -22,7 +22,8 @@
                                 <p>The app will look like this</p>
                             </div>
                             <div class="col-lg-9 col-5">
-                                <img src="{{ asset('assets/img/app-icon.png') }}" class="app-icon" alt="">
+                                <img src="{{ asset('assets/img/app-icon.png') }}" class="app-icon" style="width:50px;"
+                                    alt="">
                             </div>
                         </div>
                         <p class="mb-20">

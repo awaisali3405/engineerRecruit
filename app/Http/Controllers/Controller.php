@@ -9,9 +9,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function saveImage($image)
+    public function saveImage($image, $name)
     {
-        $name = str_replace([' '], '-', $image->getClientOriginalName());
+        $name = $name . "." . $image->getClientOriginalExtension();
         $filename = time() . "-" . $name;
         $image->move(public_path('/images'), $filename);
         return 'images/' . $filename;
