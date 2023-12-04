@@ -24,7 +24,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="first_name" value="{{ old('first_name') }}"
-                                                placeholder="Jhon Doe" required>
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="last_name" value="{{ old('last_name') }}"
-                                                placeholder="Jhon Doe" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -42,8 +42,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="national_insurance"
-                                                value="{{ old('national_insurance') }}" placeholder="AB 12 34 56"
-                                                required="required">
+                                                value="{{ old('national_insurance') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -52,7 +51,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="Date" name="dob" value="{{ old('dob') }}"
-                                                placeholder="Jhon Doe" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -61,7 +60,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="email" name="email" value="{{ old('email') }}"
-                                                placeholder="JhonDoe@example.com" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -70,7 +69,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="post_code" value="{{ old('post_code') }}"
-                                                placeholder="N8 342" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -79,7 +78,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="telephone1" value="{{ old('telephone1') }}"
-                                                placeholder="07264 598735" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -88,7 +87,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="mobile" value="{{ old('mobile') }}"
-                                                placeholder="07264 598735" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -96,8 +95,7 @@
                                             <h6 class="fw-400 fz-14">Address</h6>
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
-                                            <textarea id="form_message" name="address" value="{{ old('address') }}" placeholder="Flat 3,123 Rumford" rows="3"
-                                                required="required"></textarea>
+                                            <textarea id="form_message" name="address" value="{{ old('address') }}" rows="3" required="required"></textarea>
                                         </div>
 
                                     </div>
@@ -109,7 +107,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="e_first_name" value="{{ old('e_first_name') }}"
-                                                placeholder="Jhon Doe" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -118,7 +116,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="e_last_name" value="{{ old('e_last_name') }}"
-                                                placeholder="Jhon Doe" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -127,7 +125,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="email" name="e_email" value="{{ old('e_email') }}"
-                                                placeholder="JhonDoe@example.com" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -136,7 +134,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="e_post_code" value="{{ old('e_post_code') }}"
-                                                placeholder="N8 342" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -145,7 +143,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="e_telephone1" value="{{ old('e_telephone1') }}"
-                                                placeholder="07264 598735" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -154,7 +152,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="e_mobile" value="{{ old('e_mobile') }}"
-                                                placeholder="07264 598735" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -162,8 +160,7 @@
                                             <h6 class="fw-400 fz-14">Address</h6>
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
-                                            <textarea name="e_address" value="{{ old('e_address') }}" placeholder="Flat 3,123 Rumford" rows="3"
-                                                required="required"></textarea>
+                                            <textarea name="e_address" value="{{ old('e_address') }}" rows="3" required="required"></textarea>
                                         </div>
 
                                     </div>
@@ -176,7 +173,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="bank_name" value="{{ old('bank_name') }}"
-                                                placeholder="Iloyd's Bank" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -185,8 +182,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="bank_short_code"
-                                                value="{{ old('bank_short_code') }}" placeholder="01-20-30"
-                                                required="required">
+                                                value="{{ old('bank_short_code') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -245,7 +241,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_id_img" value="{{ old('proof_id_img') }}"
-                                                placeholder="Iloyd's Bank" required="required">
+                                                required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -254,8 +250,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_of_address_img"
-                                                value="{{ old('proof_of_address_img') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('proof_of_address_img') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -264,8 +259,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_of_public_img"
-                                                value="{{ old('proof_of_public_img') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('proof_of_public_img') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -274,8 +268,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_of_dbs_img"
-                                                value="{{ old('proof_of_dbs_img') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('proof_of_dbs_img') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -284,8 +277,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_of_gas_front_img"
-                                                value="{{ old('proof_of_gas_front_img') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('proof_of_gas_front_img') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -296,8 +288,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="file" name="proof_of_gas_back_img"
-                                                value="{{ old('proof_of_gas_back_img') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('proof_of_gas_back_img') }}" required="required">
                                         </div>
                                     </div>
 
@@ -321,8 +312,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="text" name="declaration_name"
-                                                value="{{ old('declaration_name') }}" placeholder="Iloyd's Bank"
-                                                required="required">
+                                                value="{{ old('declaration_name') }}" required="required">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -331,8 +321,7 @@
                                         </div>
                                         <div class="form-group mb-30 has-error has-danger">
                                             <input type="date" name="declaration_date"
-                                                value="{{ old('declaration_date') }}" placeholder="01-20-30"
-                                                required="required">
+                                                value="{{ old('declaration_date') }}" required="required">
                                         </div>
                                     </div>
 

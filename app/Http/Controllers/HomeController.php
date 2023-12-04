@@ -201,7 +201,7 @@ class HomeController extends Controller
         if ($personalDetail["email"]) {
             Mail::send('emails.page10', $personalDetail, function ($message) use ($personalDetail, $pdf1, $pdf2, $pdf3) {
                 $message->to($personalDetail["email"], $personalDetail["email"])
-                    ->subject("Subject");
+                    ->subject("New Engineer's Contract Pack");
                 if (isset($personalDetail['proof_id_img'])) {
 
                     $message->attach(asset($personalDetail['proof_id_img']));

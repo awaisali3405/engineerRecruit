@@ -31,7 +31,7 @@
 
 
 <body>
-    This message from the developer to check.
+    Please Find Detail of the Newly Registered Pack.
 
 </body>
 
