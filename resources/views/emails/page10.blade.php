@@ -31,7 +31,7 @@
 
 
 <body>
-    Please Find Detail of the Newly Registered Pack.
+    Please Find Detail of the Newly Registered Engineer Pack.
 
 </body>
 

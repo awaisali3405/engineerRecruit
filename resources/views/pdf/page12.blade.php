@@ -823,7 +823,7 @@
                             <h6 class="fw-400 fz-14">Dated</h6>
                         </div>
                         <div class="form-group mb-30 has-error has-danger">
-                            <input type="Date" name="contractor_date"
+                            <input type="text" name="contractor_date"
                                 value="{{ old('contractor_date', $contract_date) }}"
                                 onkeyup="document.getElementById('contractor_date').value=this.value"
                                 onchange="document.getElementById('contractor_date').value=this.value"
@@ -837,7 +837,7 @@
                                 onkeyup="document.getElementById('is_contact_confirm').value=this.value"
                                 onchange="document.getElementById('is_contact_confirm').value=this.value"
                                 onclick="document.getElementById('is_contact_confirm').value=this.value"
-                                class="checkboxterms checkboxterms1" value="1"><span
+                                class="checkboxterms checkboxterms1" value="1" checked><span
                                 class="check-confirm ml-30">I herby confirm that I
                                 have read and understood the terms herewith and throughout the
                                 contractors
